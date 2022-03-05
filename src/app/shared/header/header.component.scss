@@ -1,0 +1,44 @@
+@import "~src/styles";
+
+header {
+  background-color: $bg-secondary;
+  height: 200px;
+}
+
+li {
+  padding-bottom: 2.5px;
+}
+
+a {
+  font-size: 1.6rem;
+
+}
+
+hr {
+  border-bottom: 0.5px solid $tertiary-color;
+  margin: 0;
+}
+
+img {
+  cursor: pointer;
+}
+
+.nav-option {
+  color: $tertiary-color;
+  text-decoration: none;
+}
+
+
+.bg-navbar {
+  height: 44px;
+  background-color: $bg-primary;
+}
+
+
+
+@media (max-width: 575px) {
+
+  hr {
+    display: none;
+  }
+}
