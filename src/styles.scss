@@ -1,2 +1,7 @@
-@import url('./assets/css/reset.scss');
-@import url('./assets/css/variables.scss');
+@import '~src/assets/css/reset';
+@import '~src/assets/css/variables';
+
+html {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 10px;
+}
