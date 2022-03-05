@@ -1,3 +1,4 @@
+import { MaterialModule } from './../material/material/material.module';
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -25,7 +26,8 @@ import { AdminModule } from 'src/app/pages/admin/admin.module';
   imports: [
     CommonModule,
     SharedModule,
-    AdminModule
+    AdminModule,
+    MaterialModule
   ]
 })
 export class PagesModule {}
