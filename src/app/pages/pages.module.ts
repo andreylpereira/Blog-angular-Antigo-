@@ -11,6 +11,7 @@ import { AboutComponent } from './about/about.component';
 /* Modules */
 import { SharedModule } from './../shared/shared.module';
 import { AdminModule } from 'src/app/pages/admin/admin.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AdminModule } from 'src/app/pages/admin/admin.module';
     CommonModule,
     SharedModule,
     AdminModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule,
   ]
 })
 export class PagesModule {}

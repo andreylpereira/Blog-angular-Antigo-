@@ -1,1 +1,15 @@
-<p>login works!</p>
+<div>
+  <form [formGroup]="loginForm">
+    <input
+      type="text"
+      formControlName="email"
+      placeholder="Digite seu email"
+    />
+    <input
+      type="password"
+      formControlName="password"
+      placeholder="Digite sua senha"
+    />
+  </form>
+  <button (click)="entrar()">Entrar</button>
+</div>

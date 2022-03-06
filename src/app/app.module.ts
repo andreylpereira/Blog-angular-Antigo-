@@ -12,6 +12,8 @@ import { AppComponent } from './app.component';
 /* Modules */
 import { PagesModule } from 'src/app/pages/pages.module';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { SharedModule } from 'src/app/shared/shared.module';
     BrowserAnimationsModule,
     PagesModule,
     SharedModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   exports: [MaterialModule],
   providers: [],
