@@ -1,17 +1,18 @@
-import { SharedModule } from './../../shared/shared.module';
+/* Modules */
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { AdminRoutingModule } from 'src/app/pages/admin/admin-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { MaterialModule } from './../../material/material/material.module';
+import { SharedModule } from './../../shared/shared.module';
 
 /* Components */
 import { AdminComponent } from 'src/app/pages/admin/admin.component';
-import { AdminRoutingModule } from 'src/app/pages/admin/admin-routing.module';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { FormArticleComponent } from './form-article/form-article.component';
 import { EditArticleComponent } from './edit-article/edit-article.component';
-import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-
 
 @NgModule({
   declarations: [ AdminComponent, RegisterComponent, LoginComponent, FormArticleComponent, EditArticleComponent],
@@ -21,6 +22,7 @@ import { HttpClientModule } from '@angular/common/http';
     SharedModule,
     ReactiveFormsModule,
     HttpClientModule,
+    MaterialModule
   ]
 })
 export class AdminModule { }
