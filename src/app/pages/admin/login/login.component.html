@@ -1,17 +1,27 @@
-<div>
-  <form [formGroup]="loginForm">
-    <input
-      type="text"
-      formControlName="email"
-      placeholder="Digite seu email"
-    />
-    <input
-      type="password"
-      formControlName="password"
-      placeholder="Digite sua senha"
-    />
-  </form>
-  <button (click)="entrar()">Entrar</button>
-</div>
-
-
+<br>
+<mat-card class="bg-light container-fluid w-25" >
+  <div>
+    <form [formGroup]="loginForm">
+      <div class="form-group">
+        <input
+          type="email"
+          class="form-control"
+          aria-describedby="helpId"
+          type="text"
+          formControlName="email"
+          placeholder="Digite seu email"
+        />
+        <br>
+        <input
+          type="password"
+          class="form-control"
+          aria-describedby="helpId"
+          type="text"
+          formControlName="password"
+          placeholder="Digite sua senha"
+        />
+      </div>
+    </form>
+    <button (click)="entrar()">Entrar</button>
+  </div>
+</mat-card>

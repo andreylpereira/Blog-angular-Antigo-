@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {AuthGuardService as AuthGuard } from '../../services/auth-guard/auth-guard.service';
 
 /* Components */
 import { AdminComponent } from 'src/app/pages/admin/admin.component';
@@ -10,11 +11,12 @@ import { RegisterComponent } from 'src/app/pages/admin/register/register.compone
 
 const routes: Routes = [
   { path: '', redirectTo: '/panel-control', pathMatch: 'full' },
+  { path: 'panel-control', component: AdminComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
-  { path: 'article/new', component: FormArticleComponent },
-  { path: 'article/edit', component: EditArticleComponent },
-  { path: '**', component: AdminComponent },
+  { path: 'article/new', component: FormArticleComponent, canActivate: [AuthGuard], },
+  { path: 'article/edit', component: EditArticleComponent, canActivate: [AuthGuard], },
+  { path: '**', component: AdminComponent, },
 ];
 
 @NgModule({

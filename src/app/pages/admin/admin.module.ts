@@ -14,6 +14,7 @@ import { LoginComponent } from './login/login.component';
 import { FormArticleComponent } from './form-article/form-article.component';
 import { EditArticleComponent } from './edit-article/edit-article.component';
 
+
 @NgModule({
   declarations: [ AdminComponent, RegisterComponent, LoginComponent, FormArticleComponent, EditArticleComponent],
   imports: [
