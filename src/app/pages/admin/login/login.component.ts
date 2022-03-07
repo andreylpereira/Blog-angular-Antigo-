@@ -16,14 +16,8 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   public loginForm: FormGroup = this.formBuilder.group({
-    email: [
-      '',
-      [Validators.required, Validators.email],
-    ],
-    password: [
-      '',
-      [Validators.required],
-    ],
+    email: ['', [Validators.required, Validators.email]],
+    password: ['', [Validators.required]],
   });
 
   entrar() {
@@ -31,7 +25,6 @@ export class LoginComponent implements OnInit {
       email: this.loginForm.get('email')?.value,
       password: this.loginForm.get('password')?.value,
     };
-
     this.loginService.login(user);
   }
 }

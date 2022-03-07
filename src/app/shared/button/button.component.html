@@ -1,0 +1,11 @@
+<div *ngIf="type === 'primary'">
+  <button class="button primary" ngClass="{{ size }}">{{ title }}</button>
+</div>
+
+<div *ngIf="type === 'secondary'">
+  <button class="button secondary" ngClass="{{ size }}">{{ title }}</button>
+</div>
+
+<div *ngIf="type === 'disabled'">
+  <button class="button disabled" disabled="true" ngClass="{{ size }}">{{ title }}</button>
+</div>

@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import Login from '../../models/login/login.model';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -8,7 +9,7 @@ import Login from '../../models/login/login.model';
 export class LoginService {
   readonly url: string;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, private router: Router) {
     this.url = 'http://localhost:8080/authenticate';
   }
 
@@ -16,11 +17,17 @@ export class LoginService {
     return this.http.post<any>(this.url, user).subscribe(
       (data) => {
         localStorage.setItem('currentUser', JSON.stringify(data));
+        this.router.navigate(['/home'])
       },
       (err) => {
-        //toastr
+      //toastr
         console.log(err.error.message);
       }
     );
+  }
+
+  logOut() {
+    localStorage.removeItem('currentUser');
+    this.router.navigate(['/home']);
   }
 }

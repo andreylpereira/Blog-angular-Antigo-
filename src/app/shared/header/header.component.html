@@ -17,18 +17,40 @@
   >
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="">
-        <a class="nav-option pr-4" href="#"
+        <a
+          class="nav-option pr-4"
+          [routerLink]="['/home']"
+          routerLinkActive="router-link-active"
+          [routerLinkActiveOptions]="{ exact: true }"
           >HOME</a
         >
       </li>
       <li class="">
-        <a class="nav-option pr-4" href="#">CATEGORIAS</a>
+        <a
+          class="nav-option pr-4"
+          [routerLink]="['/categories']"
+          routerLinkActive="router-link-active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >CATEGORIAS</a
+        >
       </li>
       <li class="">
-        <a class="nav-option pr-4" href="#">SOBRE</a>
+        <a
+          class="nav-option pr-4"
+          [routerLink]="['/about']"
+          routerLinkActive="router-link-active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >SOBRE</a
+        >
       </li>
-      <li class="">
-        <a class="nav-option pr-4" href="#">PAINEL</a>
+      <li *ngIf="isLoggedIn === true">
+        <a
+          class="nav-option pr-4"
+          [routerLink]="['/panel-control']"
+          routerLinkActive="router-link-active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          >PAINEL</a
+        >
       </li>
     </ul>
     <div class="form-inline my-2 my-lg-0">
@@ -51,6 +73,10 @@
         height="22px"
       />
     </div>
+    <div *ngIf="!isLoggedIn === false">
+    <ul>
+      <li><a class="nav-option pr-4 logout" (click)="sair()">SAIR</a></li>
+    </ul>
+  </div>
   </div>
 </nav>
-<hr>
