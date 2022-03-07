@@ -1,0 +1,44 @@
+
+  <mat-card class="bg-light container-fluid card shadow" style="margin-top: 75px">
+    <mat-card-header class="d-flex justify-content-center">
+      <mat-card-title>
+        <h1>Login</h1>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div>
+        <form [formGroup]="loginForm">
+          <div class="form-group">
+            <label for="email"><b>E-mail</b></label>
+            <input
+              type="email"
+              class="form-control"
+              aria-describedby="helpId"
+              type="text"
+              formControlName="email"
+              placeholder="Digite seu email"
+            />
+            <p *ngIf="(loginForm.get('email')?.hasError('required') || loginForm.get('email')?.hasError('email')) && loginForm.controls['email']?.touched">Favor digitar um e-mail válido!</p>
+            <br />
+            <label for="password"><b>Senha</b></label>
+            <input
+              type="password"
+              class="form-control"
+              aria-describedby="helpId"
+              formControlName="password"
+              placeholder="Digite sua senha"
+            />
+            <p *ngIf="loginForm.get('password')?.hasError('required') && loginForm.controls['password']?.touched">Campo senha obrigatório!</p>
+          </div>
+        </form>
+        <app-button
+          class="d-flex justify-content-center"
+          title="Entrar"
+          type="primary"
+          size="medium"
+          (click)="entrar()"
+        ></app-button>
+        <br>
+      </div>
+    </mat-card-content>
+  </mat-card>
