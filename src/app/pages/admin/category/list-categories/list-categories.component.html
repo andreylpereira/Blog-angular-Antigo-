@@ -1,1 +1,6 @@
-<p>list-categories works!</p>
+<app-header></app-header>
+<div *ngFor="let item of listCategories">
+  {{ item.id }}
+  {{ item.title }}
+  {{ item.slug }}
+</div>

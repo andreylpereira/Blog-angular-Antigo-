@@ -56,8 +56,14 @@ export class LoginService {
     const token = data.token;
 
     const options = {
-      headers: new HttpHeaders().append('x-access-token', `Bearer ${token}`)
-    }
+      headers: new HttpHeaders()
+        .set('Access-Control-Allow-Origin', '*')
+        .set(
+          'Access-Control-Allow-Methods',
+          'GET, POST, PATCH, PUT, DELETE, OPTIONS, PUT'
+        )
+        .append('Authorization', `Bearer ${token}`),
+    };
 
     return options;
   }

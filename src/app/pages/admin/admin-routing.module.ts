@@ -11,14 +11,16 @@ import { RegisterComponent } from 'src/app/pages/admin/register/register.compone
 import { HomeComponent } from 'src/app/pages/home/home.component';
 import { FormCategoryComponent } from 'src/app/pages/admin/category/form-category/form-category.component';
 import { EditCategoryComponent } from 'src/app/pages/admin/category/edit-category/edit-category.component';
+import { ListCategoriesComponent } from 'src/app/pages/admin/category/list-categories/list-categories.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'panel-control', component: AdminComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'panel-control', component: AdminComponent },
   {
-    path: 'category',
+    path: 'panel-control/category',
+    component: ListCategoriesComponent,
     children: [
       {
         path: 'new',
@@ -33,7 +35,7 @@ const routes: Routes = [
     ],
   },
   {
-    path: 'article',
+    path: 'panel-control/article',
     children: [
       {
         path: 'new',
