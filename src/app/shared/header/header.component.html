@@ -1,5 +1,5 @@
 <!-- <header>IMG</header> -->
-<nav class="navbar navbar-expand-sm bg-navbar navbar-dark">
+<nav class="navbar navbar-expand-sm bg-navbar navbar-dark shadow">
   <button
     class="navbar-toggler d-lg-none float-right mt-2"
     type="button"
@@ -46,7 +46,7 @@
       <li *ngIf="isLoggedIn === true">
         <a
           class="nav-option pr-4"
-          [routerLink]="['/panel-control']"
+          [routerLink]="['/admin/panel-control']"
           routerLinkActive="router-link-active"
           [routerLinkActiveOptions]="{ exact: true }"
           >PAINEL</a
