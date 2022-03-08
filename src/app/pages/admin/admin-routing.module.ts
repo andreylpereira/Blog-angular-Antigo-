@@ -9,12 +9,14 @@ import { FormArticleComponent } from 'src/app/pages/admin/form-article/form-arti
 import { LoginComponent } from 'src/app/pages/admin/login/login.component';
 import { RegisterComponent } from 'src/app/pages/admin/register/register.component';
 import { HomeComponent } from 'src/app/pages/home/home.component';
+import { CategoryComponent } from 'src/app/pages/admin/category/category.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'panel-control', component: AdminComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'category/new', component: CategoryComponent, canActivate: [AuthGuard], },
   { path: 'article/new', component: FormArticleComponent, canActivate: [AuthGuard], },
   { path: 'article/edit', component: EditArticleComponent, canActivate: [AuthGuard], },
   { path: '**', component: HomeComponent, },

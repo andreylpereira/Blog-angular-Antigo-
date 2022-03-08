@@ -13,10 +13,11 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { FormArticleComponent } from './form-article/form-article.component';
 import { EditArticleComponent } from './edit-article/edit-article.component';
+import { CategoryComponent } from './category/category.component';
 
 
 @NgModule({
-  declarations: [ AdminComponent, RegisterComponent, LoginComponent, FormArticleComponent, EditArticleComponent],
+  declarations: [ AdminComponent, RegisterComponent, LoginComponent, FormArticleComponent, EditArticleComponent, CategoryComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
