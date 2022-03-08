@@ -10,7 +10,7 @@ export class LoginService {
   readonly url: string;
 
   constructor(private http: HttpClient, private router: Router) {
-    this.url = 'http://localhost:8080/authenticate';
+    this.url = 'http://localhost:8080/admin/authenticate';
   }
 
   login(user: Login) {

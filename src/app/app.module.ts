@@ -15,8 +15,6 @@ import { AppComponent } from './app.component';
 import { PagesModule } from 'src/app/pages/pages.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 
-
-
 @NgModule({
   declarations: [
     AppComponent
