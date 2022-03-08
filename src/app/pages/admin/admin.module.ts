@@ -11,13 +11,17 @@ import { SharedModule } from './../../shared/shared.module';
 import { AdminComponent } from 'src/app/pages/admin/admin.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
-import { FormArticleComponent } from './form-article/form-article.component';
-import { EditArticleComponent } from './edit-article/edit-article.component';
-import { CategoryComponent } from './category/category.component';
+import { FormArticleComponent } from './article/form-article/form-article.component';
+import { EditArticleComponent } from './article/edit-article/edit-article.component';
+import { FormCategoryComponent } from './category/form-category/form-category.component';
+import { ListCategoriesComponent } from './category/list-categories/list-categories.component';
+import { ListArticlesComponent } from './article/list-articles/list-articles.component';
+import { EditCategoryComponent } from './category/edit-category/edit-category.component';
+
 
 
 @NgModule({
-  declarations: [ AdminComponent, RegisterComponent, LoginComponent, FormArticleComponent, EditArticleComponent, CategoryComponent],
+  declarations: [ AdminComponent, RegisterComponent, LoginComponent, FormArticleComponent, EditArticleComponent, FormCategoryComponent, ListCategoriesComponent, ListArticlesComponent, EditCategoryComponent],
   imports: [
     CommonModule,
     AdminRoutingModule,
