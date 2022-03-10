@@ -1,9 +1,13 @@
-<app-header></app-header>
 <div>
-  <mat-card class="bg-light container-fluid shadow pb-2">
+  <mat-card class="bg-light container-fluid">
     <mat-card-header>
       <mat-card-title>
-        <h1>Categorias</h1>
+        <app-button
+          title="Nova Categoria"
+          type="primary"
+          size="small"
+          [routerLink]="['/admin/panel-control/category/new']"
+        ></app-button>
       </mat-card-title>
     </mat-card-header>
     <table class="table">
@@ -27,7 +31,7 @@
               title="Editar"
               type="primary"
               size="small"
-             (click)="edit(item.id)"
+              (click)="edit(item.id)"
             ></app-button>
           </td>
           <td>
