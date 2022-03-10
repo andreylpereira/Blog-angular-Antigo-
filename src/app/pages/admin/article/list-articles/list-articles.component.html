@@ -1,2 +1,45 @@
-<app-header></app-header>
-<p>list-articles works!</p>
+<div>
+  <mat-card class="bg-light container-fluid">
+    <app-button
+      title="Novo Artigo"
+      type="primary"
+      size="small"
+      [routerLink]="['/admin/panel-control/article/new']"
+    ></app-button>
+    <br />
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>TÍTULO</th>
+          <th>SLUG</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>
+            <app-button
+              class="d-flex justify-content-center"
+              title="Editar"
+              type="primary"
+              size="small"
+            ></app-button>
+          </td>
+          <td>
+            <app-button
+              class="d-flex justify-content-center"
+              title="Excluir"
+              type="secondary"
+              size="small"
+            ></app-button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-card>
+</div>

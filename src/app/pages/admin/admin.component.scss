@@ -1,0 +1,30 @@
+@import "../../../assets/css/variables.scss";
+
+a {
+  color: $primary-color !important;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.nav-tabs .nav-item.show .nav-link,
+.nav-tabs .nav-link.active {
+  color: $secondary-color !important;
+}
+
+.main {
+  border-radius: 10px;
+  margin-top: 60px;
+}
+
+@media (max-width: 575px) {
+  .main {
+    max-width: 100%;
+    border: 1px solid transparent;
+  }
+}
+
+@media (min-width: 576px) {
+  .main {
+    max-width: 75%;
+  }
+}

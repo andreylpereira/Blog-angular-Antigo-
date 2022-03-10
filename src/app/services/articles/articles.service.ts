@@ -1,12 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import Category from 'src/app/models/category/category.model';
+import Article from 'src/app/models/Article/article.model';
 import { LoginService } from 'src/app/services/login/login.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class CategoriesService {
+export class ArticlesService {
   readonly url: string;
   private options: any;
 
@@ -15,9 +15,9 @@ export class CategoriesService {
     this.options = loginService.options();
   }
 
-  createCategory(category: Category) {
+  createArticle(article: Article) {
     return this.http
-      .post<any>(`${this.url}/admin/categories/save`, category, this.options)
+      .post<any>(`${this.url}/admin/articles/save`, article, this.options)
       .subscribe(
         () => {},
         (err) => {
@@ -27,21 +27,22 @@ export class CategoriesService {
       );
   }
 
-  updateCategory(category: Category) {
+  updateArticle(article: Article) {
     return this.http
-      .put<any>(`${this.url}/admin/categories/update`, category, this.options).subscribe();
+      .put<any>(`${this.url}/admin/categories/update`, article, this.options)
+      .subscribe();
   }
 
-  deleteCategory(id: number) {
-    return this.http.delete<any>(`${this.url}/admin/categories/${id}/delete`, this.options);
+  deleteArticle(id: number) {
+    return this.http.delete<any>(
+      `${this.url}/admin/articles/${id}/delete`,
+      this.options
+    );
   }
-
-  getCategories(): any {
-    return this.http.get<any>(`${this.url}/categories`, this.options);
-  }
-
-  getCategory(id: number) {
+  getArticle(id: number) {
     return this.http.get<any>(`${this.url}/categories/${id}`, this.options);
   }
-
+  getArticles(): any {
+    return this.http.get<any>(`${this.url}/articles`, this.options);
+  }
 }
