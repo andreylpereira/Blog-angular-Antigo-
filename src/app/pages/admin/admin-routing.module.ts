@@ -11,7 +11,7 @@ import { RegisterComponent } from 'src/app/pages/admin/register/register.compone
 import { HomeComponent } from 'src/app/pages/home/home.component';
 import { FormCategoryComponent } from 'src/app/pages/admin/category/form-category/form-category.component';
 import { EditCategoryComponent } from 'src/app/pages/admin/category/edit-category/edit-category.component';
-import { ListCategoriesComponent } from 'src/app/pages/admin/category/list-categories/list-categories.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -20,18 +20,18 @@ const routes: Routes = [
   { path: 'panel-control', component: AdminComponent },
   {
     path: 'panel-control/category',
-    component: ListCategoriesComponent,
-    canActivate: [AuthGuard],
-  },
-  {
-    path: 'panel-control/category/new',
-    component: FormCategoryComponent,
-    canActivate: [AuthGuard],
-  },
-  {
-    path: 'panel-control/category/:id/edit',
-    component: EditCategoryComponent,
-    canActivate: [AuthGuard],
+    children: [
+      {
+        path: 'new',
+        component: FormCategoryComponent,
+        canActivate: [AuthGuard],
+      },
+      {
+        path: ':id/edit',
+        component: EditCategoryComponent,
+        canActivate: [AuthGuard],
+      },
+    ],
   },
   {
     path: 'panel-control/article',
