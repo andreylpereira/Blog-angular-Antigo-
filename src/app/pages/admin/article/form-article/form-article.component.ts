@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import Categories from 'src/app/models/categories/categories.model';
+import { CategoriesService } from 'src/app/services/categories/categories.service';
 
 @Component({
   selector: 'app-form-article',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormArticleComponent implements OnInit {
 
-  constructor() { }
+  public listCategories: Categories[] = []
+  constructor(private categoriesService: CategoriesService) {
+    this.categoriesService.getCategories().subscribe((data:any) => {
+
+      this.listCategories = data
+    });
+   }
 
   ngOnInit(): void {
   }
 
+  verLista() {
+    console.log(this.listCategories);
+
+  }
 }

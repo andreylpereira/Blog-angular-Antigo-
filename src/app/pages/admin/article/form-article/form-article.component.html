@@ -32,9 +32,12 @@
 </mat-card>
 <mat-card class="bg-light w-75 container-fluid mt-5">
   <br>
-<div class="form-group">
+<div class="form-group" >
   <label for=""><h1>Categoria:</h1></label>
-  <input type="text" class="form-control" name="" id="" aria-describedby="helpId" placeholder="Selecione uma categoria para o seu artigo">
+  <select class="form-control" name="" id="" >
+    <option *ngFor="let category of listCategories" value="{{category.id}}">{{category.title}}</option>
+  </select>
 </div>
 </mat-card>
 <br>
+<button (click)="verLista()">TEST</button>
