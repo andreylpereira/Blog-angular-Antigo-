@@ -21,13 +21,12 @@ export class FormCategoryComponent implements OnInit {
     title: ['', [Validators.required]]
   });
 
-  register() {
+  createCategory() {
     let category = {
       title: this.categoryForm.get('title')?.value
     };
-    console.log(category);
 
-    this.categoriesService.register(category);
+    this.categoriesService. createCategory(category);
     this.categoryForm.reset();
   }
 }

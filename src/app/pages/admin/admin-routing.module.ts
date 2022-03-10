@@ -21,18 +21,17 @@ const routes: Routes = [
   {
     path: 'panel-control/category',
     component: ListCategoriesComponent,
-    children: [
-      {
-        path: 'new',
-        component: FormCategoryComponent,
-        canActivate: [AuthGuard],
-      },
-      {
-        path: ':id/edit',
-        component: EditCategoryComponent,
-        canActivate: [AuthGuard],
-      },
-    ],
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'panel-control/category/new',
+    component: FormCategoryComponent,
+    canActivate: [AuthGuard],
+  },
+  {
+    path: 'panel-control/category/:id/edit',
+    component: EditCategoryComponent,
+    canActivate: [AuthGuard],
   },
   {
     path: 'panel-control/article',

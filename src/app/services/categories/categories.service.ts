@@ -15,7 +15,7 @@ export class CategoriesService {
     this.options = loginService.options();
   }
 
-  register(category: Category) {
+  createCategory(category: Category) {
     return this.http
       .post<any>(`${this.url}/admin/categories/save`, category, this.options)
       .subscribe(
@@ -27,7 +27,21 @@ export class CategoriesService {
       );
   }
 
+  updateCategory(category: any) {
+    return this.http
+      .put<any>(`${this.url}/admin/categories/update`, category, this.options).subscribe();
+  }
+
+  deleteCategory(id: number) {
+    return this.http.delete<any>(`${this.url}/admin/categories/${id}/delete`, this.options);
+  }
+
   getCategories(): any {
     return this.http.get<any>(`${this.url}/categories`, this.options);
   }
+
+  getCategory(id: number) {
+    return this.http.get<any>(`${this.url}/categories/${id}`, this.options);
+  }
+
 }
