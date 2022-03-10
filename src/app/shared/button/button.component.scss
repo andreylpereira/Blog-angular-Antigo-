@@ -29,8 +29,8 @@ button {
   }
 
   &.secondary {
-    color: #fff;
-    border-color: secondary-color;
+    color: $secondary-color;
+    border: 1px solid $secondary-color;
     background: linear-gradient($tertiary-hover-color, $tertiary-color);
   }
 

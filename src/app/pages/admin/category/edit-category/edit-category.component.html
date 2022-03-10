@@ -1,0 +1,43 @@
+<app-header></app-header>
+<mat-card class="bg-light container-fluid card shadow" style="margin-top: 75px">
+  <mat-card-header class="d-flex justify-content-center">
+    <mat-card-title>
+      <h1>Editar Categoria</h1>
+    </mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div>
+      <form [formGroup]="categoryForm">
+        <div class="form-group">
+          <label for="category"><b>Renomear categoria</b></label>
+          <input
+            class="form-control"
+            aria-describedby="helpId"
+            type="text"
+            formControlName="title"
+            placeholder="Digite o nome da nova categoria"
+          />
+          <p
+            *ngIf="
+              categoryForm.get('title')?.hasError('required') &&
+              categoryForm.controls['title']?.touched
+            "
+          >
+            Favor digitar o novo nome da categoria!
+          </p>
+          <br>
+          <app-button
+            class="d-flex justify-content-center"
+            title="Salvar"
+            type="primary"
+            size="medium"
+            (click)="editCategory()"
+          ></app-button>
+        </div>
+        <br />
+      </form>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+

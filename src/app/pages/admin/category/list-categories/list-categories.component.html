@@ -1,0 +1,46 @@
+<app-header></app-header>
+<div>
+  <mat-card class="bg-light container-fluid shadow pb-2">
+    <mat-card-header>
+      <mat-card-title>
+        <h1>Categorias</h1>
+      </mat-card-title>
+    </mat-card-header>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>TÍTULO</th>
+          <th>SLUG</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let item of listCategories">
+        <tr>
+          <td>{{ item.id }}</td>
+          <td>{{ item.title }}</td>
+          <td>{{ item.slug }}</td>
+          <td>
+            <app-button
+              class="d-flex justify-content-center"
+              title="Editar"
+              type="primary"
+              size="small"
+             (click)="edit(item.id)"
+            ></app-button>
+          </td>
+          <td>
+            <app-button
+              class="d-flex justify-content-center"
+              title="Excluir"
+              type="secondary"
+              size="small"
+              (click)="deleteCategory(item.id)"
+            ></app-button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </mat-card>
+</div>
