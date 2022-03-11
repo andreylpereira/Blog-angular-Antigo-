@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+/* Model */
 import Categories from 'src/app/models/categories/categories.model';
+/* Services */
 import { CategoriesService } from 'src/app/services/categories/categories.service';
 
 @Component({
@@ -11,7 +13,10 @@ import { CategoriesService } from 'src/app/services/categories/categories.servic
 export class ListCategoriesComponent implements OnInit {
   public listCategories: Categories[] = [];
 
-  constructor(private categoriesService: CategoriesService, private router: Router) {}
+  constructor(
+    private categoriesService: CategoriesService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.getCategories();
@@ -23,14 +28,13 @@ export class ListCategoriesComponent implements OnInit {
       .subscribe((data: any) => (this.listCategories = data));
   }
 
-  public edit(id: number) {
-    this.router.navigate([`admin/panel-control/category/${id}/edit`])
+  public editCategory(id: number) {
+    this.router.navigate([`admin/panel-control/category/${id}/edit`]);
   }
 
   public deleteCategory(id: number) {
-    this.categoriesService.deleteCategory(id).subscribe(
-      success => this.getCategories()
-    );
-
+    this.categoriesService
+      .deleteCategory(id)
+      .subscribe((success) => this.getCategories());
   }
 }

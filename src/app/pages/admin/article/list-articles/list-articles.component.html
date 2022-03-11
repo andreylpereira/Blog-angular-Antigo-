@@ -12,22 +12,21 @@
         <tr>
           <th>ID</th>
           <th>TÍTULO</th>
-          <th>SLUG</th>
           <th></th>
           <th></th>
         </tr>
       </thead>
-      <tbody>
+      <tbody *ngFor="let article of listArticles">
         <tr>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>#{{ article.id }}</td>
+          <td>{{ article.title }}</td>
           <td>
             <app-button
               class="d-flex justify-content-center"
               title="Editar"
               type="primary"
               size="small"
+              (click)="editArticle(article.id)"
             ></app-button>
           </td>
           <td>
@@ -36,6 +35,7 @@
               title="Excluir"
               type="secondary"
               size="small"
+              (click)="deleteArticle(article.id)"
             ></app-button>
           </td>
         </tr>
@@ -43,3 +43,6 @@
     </table>
   </mat-card>
 </div>
+
+
+

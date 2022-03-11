@@ -1,10 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import Categories from 'src/app/models/categories/categories.model';
-import { CategoriesService } from 'src/app/services/categories/categories.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+/* Model */
 import Article from '../../../../models/Article/article.model';
-import { LoginService } from 'src/app/services/login/login.service';
+import Categories from 'src/app/models/categories/categories.model';
+/* Services */
 import { ArticlesService } from 'src/app/services/articles/articles.service';
+import { LoginService } from 'src/app/services/login/login.service';
+import { CategoriesService } from 'src/app/services/categories/categories.service';
 
 @Component({
   selector: 'app-form-article',
@@ -17,7 +20,8 @@ export class FormArticleComponent implements OnInit {
     private categoriesService: CategoriesService,
     private formBuilder: FormBuilder,
     private loginService: LoginService,
-    private articlesService: ArticlesService
+    private articlesService: ArticlesService,
+    private router: Router
   ) {
     this.categoriesService.getCategories().subscribe((data: any) => {
       this.listCategories = data;
@@ -44,5 +48,6 @@ export class FormArticleComponent implements OnInit {
     };
 
     this.articlesService.createArticle(article);
+    this.router.navigate([`admin/panel-control`]);
   }
 }

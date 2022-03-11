@@ -29,11 +29,15 @@ export class CategoriesService {
 
   updateCategory(category: Category) {
     return this.http
-      .put<any>(`${this.url}/admin/categories/update`, category, this.options).subscribe();
+      .put<any>(`${this.url}/admin/categories/update`, category, this.options)
+      .subscribe();
   }
 
   deleteCategory(id: number) {
-    return this.http.delete<any>(`${this.url}/admin/categories/${id}/delete`, this.options);
+    return this.http.delete<any>(
+      `${this.url}/admin/categories/${id}/delete`,
+      this.options
+    );
   }
 
   getCategories(): any {
@@ -43,5 +47,4 @@ export class CategoriesService {
   getCategory(id: number) {
     return this.http.get<any>(`${this.url}/categories/${id}`, this.options);
   }
-
 }
