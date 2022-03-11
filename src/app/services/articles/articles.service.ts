@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+/* Model */
 import Article from 'src/app/models/Article/article.model';
+/* Services */
 import { LoginService } from 'src/app/services/login/login.service';
 
 @Injectable({

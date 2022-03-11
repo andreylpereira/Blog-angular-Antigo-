@@ -28,7 +28,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
     SharedModule,
     MaterialModule,
     ReactiveFormsModule,
-    HttpClientModule,
+    HttpClientModule
   ],
   exports: [MaterialModule],
   providers:  [

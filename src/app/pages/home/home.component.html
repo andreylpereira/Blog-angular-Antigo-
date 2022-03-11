@@ -6,7 +6,7 @@
       {{ article.title }}
       <br>
       <br>
-      <div [innerHtml]="article.body">
+      <div [innerHtml]="article.body | safeHtml">
       </div>
     </div>
   </div>
