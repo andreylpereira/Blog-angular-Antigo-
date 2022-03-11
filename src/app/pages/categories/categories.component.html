@@ -1,1 +1,8 @@
-<p>Test</p>
+<app-header></app-header>
+<mat-card class="card w-75 container-fluid mt-5" *ngFor="let category of listCategories">
+  <h1>Categorias</h1>
+  <br>
+  <ul>
+    <li><b>- </b><a (click)="categorySlug(category.slug)"> {{ category.slug }}</a></li>
+  </ul>
+</mat-card>
