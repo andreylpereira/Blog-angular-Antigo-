@@ -1,6 +1,13 @@
 <app-header></app-header>
-<app-card>
-  <!-- <div *ngFor="let item of listArticles">
-<div [innerHtml]="item.body"></div>
-</div> -->
-</app-card>
+
+<mat-card class="w-75 container-fluid mt-5"  *ngFor="let article of listArticles">
+  <div>
+    <div class="card">
+      {{ article.title }}
+      <br>
+      <br>
+      <div [innerHtml]="article.body">
+      </div>
+    </div>
+  </div>
+</mat-card>

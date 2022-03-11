@@ -11,7 +11,7 @@ const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'categories', component: CategoriesComponent },
-  { path: 'categories/:slug', component: ArticlesSlugComponent },
+  { path: 'categories/:id', component: ArticlesSlugComponent },
   { path: 'about', component: AboutComponent },
   { path: 'admin', loadChildren: () => import('./pages/admin/admin.module').then(a => a.AdminModule)},
   { path: '**', component: HomeComponent },

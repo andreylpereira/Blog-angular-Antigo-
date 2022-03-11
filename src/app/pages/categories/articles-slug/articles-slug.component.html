@@ -1,2 +1,4 @@
 <app-header></app-header>
-<p>articles-slug works!</p>
+  <div *ngFor="let item of listArticles">
+<div [innerHtml]="item.body"></div>
+</div>

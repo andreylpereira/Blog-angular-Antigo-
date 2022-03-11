@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+/* Model */
 import Categories from 'src/app/models/categories/categories.model';
+/* Services */
 import { CategoriesService } from 'src/app/services/categories/categories.service';
 @Component({
   selector: 'app-categories',
@@ -20,8 +22,8 @@ export class CategoriesComponent implements OnInit {
       .subscribe((categories: Categories[]) => (this.listCategories = categories));
   }
 
-  categorySlug(slug: string) {
-    this.router.navigate([`/categories/${slug}`])
+  categorySlug(id: number) {
+    this.router.navigate([`/categories/${id}`])
   }
 
   ngOnInit(): void {}

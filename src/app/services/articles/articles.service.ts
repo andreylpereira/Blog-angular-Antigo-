@@ -39,11 +39,19 @@ export class ArticlesService {
       this.options
     );
   }
+
   getArticle(id: number) {
     return this.http.get<any>(`${this.url}/article/${id}`, this.options);
   }
 
   getArticles(): any {
     return this.http.get<any>(`${this.url}/articles`, this.options);
+  }
+
+  getArticlesById(id: number): any {
+    return this.http.get<any>(
+      `${this.url}/categories/${id}/articles`,
+      this.options
+    );
   }
 }

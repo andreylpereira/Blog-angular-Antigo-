@@ -63,6 +63,10 @@ export class EditArticleComponent implements OnInit {
     };
 
     if (this.articleForm.get('category')?.value === 0) {
+      article.id = this.id,
+      article.title = this.articleForm.get('title')?.value,
+      article.body = this.articleForm.get('body')?.value,
+      article.title = this.articleForm.get('title')?.value,
       article.category = this.article.category;
     }
     this.articlesService.updateArticle(article);
