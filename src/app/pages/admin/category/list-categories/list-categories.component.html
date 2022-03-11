@@ -19,7 +19,7 @@
       </thead>
       <tbody *ngFor="let item of listCategories">
         <tr>
-          <td>{{ item.id }}</td>
+          <td>#{{ item.id }}</td>
           <td>{{ item.title }}</td>
           <td>{{ item.slug }}</td>
           <td>
@@ -28,7 +28,7 @@
               title="Editar"
               type="primary"
               size="small"
-              (click)="edit(item.id)"
+              (click)="editCategory(item.id)"
             ></app-button>
           </td>
           <td>

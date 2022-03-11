@@ -18,8 +18,6 @@ import { ListCategoriesComponent } from './category/list-categories/list-categor
 import { ListArticlesComponent } from './article/list-articles/list-articles.component';
 import { EditCategoryComponent } from './category/edit-category/edit-category.component';
 
-
-
 @NgModule({
   declarations: [ AdminComponent, RegisterComponent, LoginComponent, FormArticleComponent, EditArticleComponent, FormCategoryComponent, ListCategoriesComponent, ListArticlesComponent, EditCategoryComponent],
   imports: [

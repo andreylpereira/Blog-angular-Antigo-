@@ -29,7 +29,7 @@ export class ArticlesService {
 
   updateArticle(article: Article) {
     return this.http
-      .put<any>(`${this.url}/admin/categories/update`, article, this.options)
+      .put<any>(`${this.url}/admin/articles/update`, article, this.options)
       .subscribe();
   }
 
@@ -40,8 +40,9 @@ export class ArticlesService {
     );
   }
   getArticle(id: number) {
-    return this.http.get<any>(`${this.url}/categories/${id}`, this.options);
+    return this.http.get<any>(`${this.url}/article/${id}`, this.options);
   }
+
   getArticles(): any {
     return this.http.get<any>(`${this.url}/articles`, this.options);
   }

@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Params, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+/* Service */
 import { CategoriesService } from 'src/app/services/categories/categories.service';
-import  Categories  from '../../../../models/categories/categories.model';
+
 @Component({
   selector: 'app-edit-category',
   templateUrl: './edit-category.component.html',

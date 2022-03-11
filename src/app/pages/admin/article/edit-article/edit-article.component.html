@@ -1,2 +1,94 @@
 <app-header></app-header>
-<p>edit-article works!</p>
+<div class="card bg-light w-75 container-fluid mt-5 shadow">
+  <form [formGroup]="articleForm">
+    <mat-card>
+      <br />
+      <div class="form-group">
+        <label for=""><h1>Título:</h1></label>
+        <input
+          type="text"
+          class="form-control"
+          name=""
+          id=""
+          formControlName="title"
+          aria-describedby="helpId"
+          placeholder="Digite o novo título do artigo"
+          value="{{ article?.title }}"
+        />
+        <p
+          *ngIf="
+            articleForm.get('title')?.hasError('required') &&
+            articleForm.controls['title']?.touched
+          "
+        >
+          Favor digitar o novo título do artigo!
+        </p>
+      </div>
+    </mat-card>
+
+    <mat-card>
+      <editor
+        initialValue="{{ article?.body }}"
+        apiKey="51ltykau1m4rzm79j9kefwxyat167fwatnpx3loleiewq8jz"
+        formControlName="body"
+        [init]="{
+          height: 300,
+          menubar: true,
+          plugins: [
+            'advlist autolink lists link image charmap print',
+            'preview anchor searchreplace visualblocks code',
+            'fullscreen insertdatetime media table paste',
+            'help wordcount'
+          ],
+          toolbar:
+            'undo redo | formatselect | bold italic | \
+        alignleft aligncenter alignright alignjustify | \
+        bullist numlist outdent indent | help'
+        }"
+      >
+      </editor>
+      <p
+        *ngIf="
+          articleForm.get('body')?.hasError('required') &&
+          articleForm.controls['body']?.touched
+        "
+      >
+        Favor reescreva o seu artigo!
+      </p>
+    </mat-card>
+    <mat-card>
+      <div class="form-group">
+        <label for=""><h1>Categoria:</h1></label>
+        <select
+          class="form-control"
+          name=""
+          id=""
+          formControlName="category"
+          placeholder="Selecione uma categoria"
+        >
+          <option
+            *ngFor="let category of listCategories"
+            value="{{ category.id }}"
+          >
+            {{ category.title }}
+          </option>
+        </select>
+      </div>
+      <p
+        *ngIf="
+          articleForm.get('category')?.hasError('required') &&
+          articleForm.controls['category']?.touched
+        "
+      >
+        Favor selecionar uma categoria!
+      </p>
+      <br />
+      <app-button
+        title="Salvar"
+        type="primary"
+        size="small"
+        (click)="editArticle()"
+      ></app-button>
+    </mat-card>
+  </form>
+</div>

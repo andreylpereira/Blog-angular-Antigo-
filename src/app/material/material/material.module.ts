@@ -18,6 +18,8 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import {MatTableModule} from '@angular/material/table';
 import {MatExpansionModule} from '@angular/material/expansion';
 
+/* Editor */
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 @NgModule({
   imports: [
@@ -36,7 +38,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatListModule,
     MatDialogModule,
     MatTableModule,
-    MatExpansionModule
+    MatExpansionModule,
+    EditorModule
   ],
   exports: [
     MatButtonModule,
@@ -54,7 +57,8 @@ import {MatExpansionModule} from '@angular/material/expansion';
     MatListModule,
     MatDialogModule,
     MatTableModule,
-    MatExpansionModule
+    MatExpansionModule,
+    EditorModule
   ]
 })
 
