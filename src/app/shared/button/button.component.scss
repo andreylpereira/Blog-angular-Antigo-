@@ -44,7 +44,7 @@ button {
   }
 
   &:focus {
-    color: $secondary-color;
+    color: $disabled-color;
   }
 
   &.disabled {

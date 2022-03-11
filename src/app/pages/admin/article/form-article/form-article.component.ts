@@ -48,6 +48,5 @@ export class FormArticleComponent implements OnInit {
     };
 
     this.articlesService.createArticle(article);
-    this.router.navigate([`admin/panel-control`]);
   }
 }

@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+/* Model */
 import Article from 'src/app/models/Article/article.model';
+/* Services */
 import { LoginService } from 'src/app/services/login/login.service';
 
 @Injectable({
@@ -39,11 +41,19 @@ export class ArticlesService {
       this.options
     );
   }
+
   getArticle(id: number) {
     return this.http.get<any>(`${this.url}/article/${id}`, this.options);
   }
 
   getArticles(): any {
     return this.http.get<any>(`${this.url}/articles`, this.options);
+  }
+
+  getArticlesById(id: number): any {
+    return this.http.get<any>(
+      `${this.url}/categories/${id}/articles`,
+      this.options
+    );
   }
 }

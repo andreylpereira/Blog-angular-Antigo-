@@ -34,16 +34,21 @@ export class EditArticleComponent implements OnInit {
   ) {
     this.route.params.subscribe((params: Params) => (this.id = params['id']));
 
-    this.categoriesService.getCategories().subscribe((data: any) => {
-      this.listCategories = data;
-    });
-
+    this.getArticles();
     this.articlesService.getArticle(this.id).subscribe((data: any) => {
       this.article = data;
     });
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.getArticles();
+  }
+
+  getArticles() {
+    this.categoriesService.getCategories().subscribe((data: any) => {
+      this.listCategories = data;
+    });
+  }
 
   articleForm: FormGroup = this.formBuilder.group({
     title: ['', [Validators.required]],
@@ -63,9 +68,13 @@ export class EditArticleComponent implements OnInit {
     };
 
     if (this.articleForm.get('category')?.value === 0) {
+      article.id = this.id,
+      article.title = this.articleForm.get('title')?.value,
+      article.body = this.articleForm.get('body')?.value,
+      article.title = this.articleForm.get('title')?.value,
       article.category = this.article.category;
     }
     this.articlesService.updateArticle(article);
-    this.router.navigate([`admin/panel-control`]);
+    // this.router.navigate([`/admin/panel-control`]);
   }
 }

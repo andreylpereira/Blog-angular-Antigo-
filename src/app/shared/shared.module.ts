@@ -5,18 +5,15 @@ import { CommonModule } from '@angular/common';
 
 /* Components */
 import { HeaderComponent } from './header/header.component';
-import { CardComponent } from './card/card.component';
 import { ButtonComponent } from './button/button.component';
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    CardComponent,
     ButtonComponent
   ],
   exports: [
     HeaderComponent,
-    CardComponent,
     ButtonComponent
   ],
   imports: [
