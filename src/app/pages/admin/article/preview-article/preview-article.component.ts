@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, DoCheck, OnInit } from '@angular/core';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 /* Model */
 import Articles from 'src/app/models/articles/articles.model';
@@ -32,7 +32,12 @@ export class PreviewArticleComponent implements OnInit {
 
   ngOnInit(): void {
     this.getArticle();
+    setTimeout(() => {
+      this.getArticle();
+    }, 100);
   }
+
+
 
   getArticle() {
     this.articlesService.getArticle(this.id).subscribe((data: any) => {
