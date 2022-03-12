@@ -11,6 +11,7 @@ import { RegisterComponent } from 'src/app/pages/admin/register/register.compone
 import { HomeComponent } from 'src/app/pages/home/home.component';
 import { FormCategoryComponent } from 'src/app/pages/admin/category/form-category/form-category.component';
 import { EditCategoryComponent } from 'src/app/pages/admin/category/edit-category/edit-category.component';
+import { PreviewArticleComponent } from 'src/app/pages/admin/article/preview-article/preview-article.component';
 
 
 const routes: Routes = [
@@ -39,6 +40,11 @@ const routes: Routes = [
       {
         path: 'new',
         component: FormArticleComponent,
+        canActivate: [AuthGuard],
+      },
+      {
+        path: ':id',
+        component: PreviewArticleComponent,
         canActivate: [AuthGuard],
       },
       {

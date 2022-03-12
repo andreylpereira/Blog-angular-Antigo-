@@ -1,5 +1,7 @@
 @import "~src/styles";
 
+
+
 header {
   background-color: $bg-secondary;
   height: 200px;
@@ -11,6 +13,7 @@ li {
 
 a {
   font-size: 1.6rem;
+  padding: 15px 15px 8px 15px !important;
 
 }
 

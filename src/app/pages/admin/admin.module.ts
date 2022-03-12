@@ -17,16 +17,17 @@ import { FormCategoryComponent } from './category/form-category/form-category.co
 import { ListCategoriesComponent } from './category/list-categories/list-categories.component';
 import { ListArticlesComponent } from './article/list-articles/list-articles.component';
 import { EditCategoryComponent } from './category/edit-category/edit-category.component';
+import { PreviewArticleComponent } from './article/preview-article/preview-article.component';
 
 @NgModule({
-  declarations: [ AdminComponent, RegisterComponent, LoginComponent, FormArticleComponent, EditArticleComponent, FormCategoryComponent, ListCategoriesComponent, ListArticlesComponent, EditCategoryComponent ],
+  declarations: [ AdminComponent, RegisterComponent, LoginComponent, FormArticleComponent, EditArticleComponent, FormCategoryComponent, ListCategoriesComponent, ListArticlesComponent, EditCategoryComponent, PreviewArticleComponent ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     SharedModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MaterialModule
+    MaterialModule,
   ]
 })
 export class AdminModule { }

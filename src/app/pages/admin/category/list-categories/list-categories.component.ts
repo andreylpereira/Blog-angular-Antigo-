@@ -16,7 +16,10 @@ export class ListCategoriesComponent implements OnInit {
   constructor(
     private categoriesService: CategoriesService,
     private router: Router
-  ) {}
+  ) {
+
+  }
+
 
   ngOnInit(): void {
     this.getCategories();
@@ -26,6 +29,7 @@ export class ListCategoriesComponent implements OnInit {
     this.categoriesService
       .getCategories()
       .subscribe((data: any) => (this.listCategories = data));
+
   }
 
   public editCategory(id: number) {
