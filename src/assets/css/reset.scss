@@ -16,7 +16,7 @@ h6,
 p,
 blockquote,
 pre,
-a,
+// a,
 abbr,
 acronym,
 address,
@@ -39,7 +39,7 @@ sub,
 sup,
 tt,
 var,
-b,
+// b,
 u,
 i,
 center,
@@ -80,7 +80,7 @@ video {
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
+  // font: inherit;
   vertical-align: baseline;
 }
 
@@ -100,7 +100,7 @@ section {
 }
 
 body {
-  line-height: 1;
+  // line-height: 1;
 }
 
 ol,
