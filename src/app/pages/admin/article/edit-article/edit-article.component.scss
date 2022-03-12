@@ -13,3 +13,18 @@ p {
 input, select {
   font-size: 1.2rem;
 }
+
+@media (max-width: 575px) {
+
+  .card {
+    padding: 0;
+    max-width: 100%
+  }
+}
+
+@media (min-width: 576px) {
+
+  .card {
+    max-width: 75%
+  }
+}

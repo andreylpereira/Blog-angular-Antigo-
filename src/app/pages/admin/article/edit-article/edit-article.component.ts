@@ -37,11 +37,17 @@ export class EditArticleComponent implements OnInit {
     this.getArticles();
     this.articlesService.getArticle(this.id).subscribe((data: any) => {
       this.article = data;
+      this.articleForm.controls['title'].setValue(this.article.title);
+      this.articleForm.controls['body'].setValue(this.article.body);
     });
   }
 
   ngOnInit(): void {
     this.getArticles();
+
+    this.articleForm.controls['title'].setValue(this.article.title);
+    this.articleForm.controls['body'].setValue(this.article.body);
+
   }
 
   getArticles() {
@@ -57,6 +63,10 @@ export class EditArticleComponent implements OnInit {
   });
 
   editArticle() {
+
+
+
+
     let user = this.loginService.getUser();
     let author = `${user.firstName} ${user.lastName}`;
     let article: Article = {
