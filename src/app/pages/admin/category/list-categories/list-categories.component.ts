@@ -17,12 +17,14 @@ export class ListCategoriesComponent implements OnInit {
     private categoriesService: CategoriesService,
     private router: Router
   ) {
-
+    this.getCategories();
   }
 
 
   ngOnInit(): void {
-    this.getCategories();
+    setTimeout(() => {
+      this.getCategories();
+    }, 100);
   }
 
   public getCategories() {
