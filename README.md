@@ -9,7 +9,7 @@
 - Angular 13+;
 - Angular Material;
 - Bootstrap 4;
-- -TinyMCE;
+- TinyMCE;
 
 ### Back-end:
 - nodejs;
