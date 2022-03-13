@@ -7,7 +7,6 @@ import { CommonModule } from '@angular/common';
 import { HomeComponent } from 'src/app/pages/home/home.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { AboutComponent } from './about/about.component';
-import { SafeHtmlPipe } from 'src/app/pipes/safe-html.pipe';
 
 /* Modules */
 import { SharedModule } from './../shared/shared.module';
@@ -21,7 +20,6 @@ import { ArticlesSlugComponent } from './categories/articles-slug/articles-slug.
     CategoriesComponent,
     AboutComponent,
     ArticlesSlugComponent,
-    SafeHtmlPipe
   ],
   exports: [
     HomeComponent,
@@ -33,7 +31,7 @@ import { ArticlesSlugComponent } from './categories/articles-slug/articles-slug.
     SharedModule,
     AdminModule,
     MaterialModule,
-    ReactiveFormsModule,
+    ReactiveFormsModule
   ]
 })
 export class PagesModule {}

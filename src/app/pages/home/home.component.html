@@ -1,13 +1,23 @@
 <app-header></app-header>
 
-<mat-card class="w-75 container-fluid mt-5"  *ngFor="let article of listArticles">
+<div style="margin-top: 40px; margin-bottom: 40px">
+
+  <mat-card
+  class="bg-white article container-fluid mt-5 shadow"
+  *ngFor="let article of listArticles"
+>
   <div>
-    <div class="card">
-      {{ article.title }}
-      <br>
-      <br>
-      <div [innerHtml]="article.body | safeHtml">
-      </div>
-    </div>
+    <h2>Por: {{ article.author }}</h2>
+    <h3>
+      {{ article.createdAt | date:'dd/MM/yyyy HH:mm' }}h
+    </h3>
+    <h1>{{ article.title }}</h1>
+    <div [innerHtml]="article.body | safeHtml" class="body"></div>
+  </div>
+  <br>
+  <div *ngIf="article.createdAt !== article.updatedAt">
+    <hr>
+    <p><b>Atualizado em:  {{ article.updatedAt | date:'dd/MM/yyyy HH:mm' }}h</b></p>
   </div>
 </mat-card>
+</div>

@@ -34,17 +34,23 @@ export class EditArticleComponent implements OnInit {
   ) {
     this.route.params.subscribe((params: Params) => (this.id = params['id']));
 
-    this.getArticles();
+    this. getArticlesCategories();
     this.articlesService.getArticle(this.id).subscribe((data: any) => {
       this.article = data;
+      this.articleForm.controls['title'].setValue(this.article.title);
+      this.articleForm.controls['body'].setValue(this.article.body);
     });
   }
 
   ngOnInit(): void {
-    this.getArticles();
+    this. getArticlesCategories();
+
+    this.articleForm.controls['title'].setValue(this.article.title);
+    this.articleForm.controls['body'].setValue(this.article.body);
+
   }
 
-  getArticles() {
+  getArticlesCategories() {
     this.categoriesService.getCategories().subscribe((data: any) => {
       this.listCategories = data;
     });
@@ -57,6 +63,7 @@ export class EditArticleComponent implements OnInit {
   });
 
   editArticle() {
+
     let user = this.loginService.getUser();
     let author = `${user.firstName} ${user.lastName}`;
     let article: Article = {
@@ -75,6 +82,6 @@ export class EditArticleComponent implements OnInit {
       article.category = this.article.category;
     }
     this.articlesService.updateArticle(article);
-    // this.router.navigate([`/admin/panel-control`]);
+    this.router.navigate([`/admin/panel-control/article/${this.id}`]);
   }
 }

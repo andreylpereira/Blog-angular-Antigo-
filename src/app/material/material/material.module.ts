@@ -15,13 +15,17 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTooltipModule } from '@angular/material/tooltip';
-import {MatTableModule} from '@angular/material/table';
-import {MatExpansionModule} from '@angular/material/expansion';
-
+import { MatTableModule } from '@angular/material/table';
+import { MatExpansionModule } from '@angular/material/expansion';
+/* Pipe */
+import { SafeHtmlPipe } from '../../pipes/safe-html.pipe'
 /* Editor */
 import { EditorModule } from '@tinymce/tinymce-angular';
 
 @NgModule({
+  declarations: [
+    SafeHtmlPipe
+  ],
   imports: [
     MatButtonModule,
     MatMenuModule,
@@ -58,7 +62,8 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     MatDialogModule,
     MatTableModule,
     MatExpansionModule,
-    EditorModule
+    EditorModule,
+    SafeHtmlPipe
   ]
 })
 

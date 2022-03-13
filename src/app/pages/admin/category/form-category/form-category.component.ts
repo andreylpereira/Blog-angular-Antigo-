@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 /* Services */
 import { CategoriesService } from 'src/app/services/categories/categories.service';
 
@@ -13,7 +14,8 @@ export class FormCategoryComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private categoriesService: CategoriesService
+    private categoriesService: CategoriesService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
@@ -30,5 +32,6 @@ export class FormCategoryComponent implements OnInit {
 
     this.categoriesService. createCategory(category);
     this.categoryForm.reset();
+    this.router.navigate(['/admin/panel-control'])
   }
 }

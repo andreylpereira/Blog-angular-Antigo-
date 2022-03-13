@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Params, ActivatedRoute } from '@angular/router';
+import { Params, ActivatedRoute, Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 /* Service */
 import { CategoriesService } from 'src/app/services/categories/categories.service';
@@ -17,7 +17,8 @@ export class EditCategoryComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private formBuilder: FormBuilder,
-    private categoriesService: CategoriesService
+    private categoriesService: CategoriesService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -37,5 +38,7 @@ export class EditCategoryComponent implements OnInit {
 
     this.categoriesService.updateCategory(category);
     this.categoryForm.reset();
+    this.router.navigateByUrl('/admin/panel-control', { skipLocationChange: true });
+
   }
 }

@@ -5,4 +5,5 @@ export default interface Articles {
   category: number,
   createdAt: string,
   updatedAt: string,
+  author?: string,
 }

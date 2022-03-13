@@ -32,10 +32,10 @@ import { SharedModule } from 'src/app/shared/shared.module';
   ],
   exports: [MaterialModule],
   providers:  [
-    {
-      provide: LOCALE_ID,
-      useValue: "pt"
-    },
+    // {
+    //   provide: LOCALE_ID,
+    //   useValue: "pt"
+    // },
     { provide: JWT_OPTIONS, useValue: JWT_OPTIONS },
     JwtHelperService
 ],
