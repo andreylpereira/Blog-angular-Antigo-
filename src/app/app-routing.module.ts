@@ -13,8 +13,7 @@ const routes: Routes = [
   { path: 'categories', component: CategoriesComponent },
   { path: 'categories/:id', component: ArticlesSlugComponent },
   { path: 'about', component: AboutComponent },
-  { path: 'admin', loadChildren: () => import('./pages/admin/admin.module').then(a => a.AdminModule)},
-  { path: '**', component: HomeComponent },
+  { path: 'admin', loadChildren: () => import('./pages/admin/admin.module').then(a => a.AdminModule)}
 ];
 
 @NgModule({
