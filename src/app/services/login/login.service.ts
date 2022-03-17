@@ -55,18 +55,23 @@ export class LoginService {
   options() {
     const session: any = localStorage.getItem('currentUser');
     const data = JSON.parse(session);
-    const token = data.token;
 
-    const options = {
-      headers: new HttpHeaders()
-        .set('Access-Control-Allow-Origin', '*')
-        .set(
-          'Access-Control-Allow-Methods',
-          'GET, POST, PATCH, PUT, DELETE, OPTIONS, PUT'
-        )
-        .append('Authorization', `Bearer ${token}`),
-    };
+    if (data !== null) {
+      const token = data.token;
 
-    return options;
+      const options = {
+        headers: new HttpHeaders()
+          .set('Access-Control-Allow-Origin', '*')
+          .set(
+            'Access-Control-Allow-Methods',
+            'GET, POST, PATCH, PUT, DELETE, OPTIONS, PUT'
+          )
+          .append('Authorization', `Bearer ${token}`),
+      };
+
+      return options;
+    } else {
+      return false;
+    }
   }
 }
